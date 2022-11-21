@@ -1,16 +1,20 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const QuizesCat = ({ quiz }) => {
     //console.log(quiz);
-    const { logo } = quiz;
+    const { logo, id } = quiz;
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={logo} />
             <Card.Body>
                 <Card.Title>{quiz.name}</Card.Title>
-                <Button variant="primary">Go somewhere</Button>
+                <Card.Text>Total Quizes: {quiz.total}</Card.Text>
+                <Link to={`/quizes/${id}`}>
+                    <Button variant="primary">Go</Button>
+                </Link>
             </Card.Body>
         </Card>
     );
