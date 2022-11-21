@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Quiz from './components/Quiz/Quiz';
+import Quizes from './components/Quizes/Quizes';
 import Main from './layout/Main';
 
 function App() {
@@ -16,6 +17,10 @@ function App() {
             return fetch('https://openapi.programming-hero.com/api/quiz');
           },
           element: <Quiz></Quiz>
+        },
+        {
+          path: 'quizes',
+          element: <Quizes></Quizes>
         }
       ]
     }
