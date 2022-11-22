@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
-import { EyeIcon } from '@heroicons/react/24/solid'
 
 const QuizeQuestions = ({ question, currentQuestion }) => {
     const { options } = question;
