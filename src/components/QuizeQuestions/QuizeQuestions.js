@@ -1,12 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
-import { CurrentQuestion } from '../Quizes/Quizes';
+import Button from 'react-bootstrap/Button';
 
-const QuizeQuestions = ({ question }) => {
+const QuizeQuestions = ({ question, currentQuestion }) => {
     const { options } = question;
 
-    const [currentQuestion, setCurrentQuestion] = useContext(CurrentQuestion);
     const [answer, setAnswer] = useState([]);
     const [showAnswer, setShowAnswer] = useState(false);
 
@@ -27,7 +26,7 @@ const QuizeQuestions = ({ question }) => {
 
     return (
         <div className='border mb-3 container'>
-            <button onClick={showAnswerBtn}>Show Answer</button>
+            <Button variant='warning' onClick={showAnswerBtn}>Show Answer</Button>
             {showAnswer}
             <h3>Question No {currentQuestion}.{question.question}</h3>
             <Form className="mw-100">
