@@ -1,7 +1,7 @@
 # Getting Started Quizards App
 
-## Available Scripts
+## Code Link
 https://github.com/programming-hero-web-course2/b6-quiz-crackerz-ypranab/
 
-##Live Site
+## Live Website Link
 https://effervescent-cascaron-a54def.netlify.app/
