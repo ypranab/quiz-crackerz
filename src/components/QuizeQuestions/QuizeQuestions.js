@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 const QuizeQuestions = ({ question, currentQuestion }) => {
     const { options } = question;
@@ -28,9 +29,9 @@ const QuizeQuestions = ({ question, currentQuestion }) => {
     }
 
     return (
-        <div className='border mb-3 container position-relative'>
-            <h3 className='me-5 ms-5'>Question No {currentQuestion}.{question.question}</h3>
-            <Button variant='warning' className='position-absolute top-0 end-0' onClick={showAnswerBtn}>Show</Button>
+        <div className='bg-info bg-opacity-10 border border-info border-start-0 rounded-end mb-3 container position-relative'>
+            <h3 className='mb-5 me-5 text-start'>Question No {currentQuestion}.{question.question}</h3>
+            <FontAwesomeIcon icon={faEye} variant='warning' className='position-absolute top-0 end-0' onClick={showAnswerBtn} />
             <Toast onClose={() => setShow(false)} show={show} delay={4000} autohide>
                 <Toast.Header className='position-absolute top-10 end-0'>
                     <strong>Correct Answer: {showAnswer}</strong>
@@ -38,8 +39,7 @@ const QuizeQuestions = ({ question, currentQuestion }) => {
             </Toast>
             <Form className='text-start container'>
                 {
-                    options.map((idx, option) => <div className="ms-5 ps-5 w-50"
-                        key={idx}
+                    options.map(option => <div className="ms-5 ps-5 w-50"
                         option={option}>
                         <Alert variant="success">
                             <Form.Check onClick={() => handleAnswer(option)}
