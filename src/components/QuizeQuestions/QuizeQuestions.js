@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
+import Toast from 'react-bootstrap/Toast';
+import { EyeIcon } from '@heroicons/react/24/solid'
 
 const QuizeQuestions = ({ question, currentQuestion }) => {
     const { options } = question;
 
     const [answer, setAnswer] = useState([]);
     const [showAnswer, setShowAnswer] = useState(false);
+    const [show, setShow] = useState(false);
 
     const showAnswerBtn = () => {
         setShowAnswer(question.correctAnswer);
+        setShow(true);
     }
 
     let isCorrect;
@@ -26,12 +30,17 @@ const QuizeQuestions = ({ question, currentQuestion }) => {
 
     return (
         <div className='border mb-3 container'>
-            <Button variant='warning' onClick={showAnswerBtn}>Show Answer</Button>
-            {showAnswer}
             <h3>Question No {currentQuestion}.{question.question}</h3>
-            <Form className="mw-100">
+            <Button variant='warning' className='d-flex justify-content-end' onClick={showAnswerBtn}>Show</Button>
+            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+                <Toast.Header>
+                    <strong>Correct Answer: {showAnswer}</strong>
+                </Toast.Header>
+            </Toast>
+            <Form className='text-start container'>
                 {
-                    options.map(option => <div className="ms-5 ps-5 d-flex justify-content-start"
+                    options.map((idx, option) => <div className="ms-5 ps-5 w-50"
+                        key={idx}
                         option={option}>
                         <Alert variant="success">
                             <Form.Check onClick={() => handleAnswer(option)}

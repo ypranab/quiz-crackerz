@@ -1,0 +1,11 @@
+nav {
+    height: 88px;
+    background-color: cornflowerblue;
+}
+
+nav a {
+    padding-left: 3%;
+    font-size: 34px;
+    text-decoration: none;
+    color: black;
+}

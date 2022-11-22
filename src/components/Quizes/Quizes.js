@@ -7,14 +7,6 @@ const Quizes = () => {
     const { questions, name } = quizesData.data;
     let currentQuestion = 1;
 
-    //setCurrentQuestion(nextQuestion);
-
-    // if (nextQuestion < question.length) {
-    //     setCurrentQuestion(nextQuestion);
-    // } else {
-    //     setShowScore(true);
-    // }
-    //console.log(name);
     return (
         <div>
             <h2>This is {name} quizes</h2>
