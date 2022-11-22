@@ -28,11 +28,11 @@ const QuizeQuestions = ({ question, currentQuestion }) => {
     }
 
     return (
-        <div className='border mb-3 container'>
-            <h3>Question No {currentQuestion}.{question.question}</h3>
-            <Button variant='warning' className='d-flex justify-content-end' onClick={showAnswerBtn}>Show</Button>
-            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-                <Toast.Header>
+        <div className='border mb-3 container position-relative'>
+            <h3 className='me-5 ms-5'>Question No {currentQuestion}.{question.question}</h3>
+            <Button variant='warning' className='position-absolute top-0 end-0' onClick={showAnswerBtn}>Show</Button>
+            <Toast onClose={() => setShow(false)} show={show} delay={4000} autohide>
+                <Toast.Header className='position-absolute top-10 end-0'>
                     <strong>Correct Answer: {showAnswer}</strong>
                 </Toast.Header>
             </Toast>
