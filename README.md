@@ -1,9 +1,7 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started Quizards App
 
 ## Available Scripts
+https://github.com/programming-hero-web-course2/b6-quiz-crackerz-ypranab/
 
-In the project directory, you can run:
-
-### `npm start`
+##Live Site
+https://effervescent-cascaron-a54def.netlify.app/
