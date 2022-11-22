@@ -8,7 +8,7 @@ const QuizesCat = ({ quiz }) => {
     const { logo, id } = quiz;
     return (
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={logo} />
+            <Card.Img className='w-75' variant="top" src={logo} />
             <Card.Body>
                 <Card.Title>{quiz.name}</Card.Title>
                 <Card.Text>Total Quizes: {quiz.total}</Card.Text>

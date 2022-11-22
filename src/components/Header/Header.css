@@ -1,5 +1,5 @@
 nav {
-    height: 88px;
+    height: 68px;
     background-color: cornflowerblue;
 }
 
@@ -8,4 +8,9 @@ nav a {
     font-size: 34px;
     text-decoration: none;
     color: black;
+}
+
+.header {
+    background-color: aquamarine;
+    height: 120px;
 }
